@@ -35,3 +35,39 @@ include_directories("${CMAKE_SOURCE_DIR}")
 target_link_libraries(fcsimulator 
        Qt5::Widgets 
 )
+
+
+# Destination paths below are relative to ${CMAKE_INSTALL_PREFIX}
+# install(TARGETS ${PROJECT_NAME}
+#     BUNDLE DESTINATION . COMPONENT Runtime
+#     RUNTIME DESTINATION ${INSTALL_RUNTIME_DIR} COMPONENT Runtime
+#     )
+
+# # Note Mac specific extension .app
+# set(APPS "\$ENV{DESTDIR}\${CMAKE_INSTALL_PREFIX}/${PROJECT_NAME}.app")
+
+# # Directories to look for dependencies
+# set(DIRS "${CMAKE_BINARY_DIR}")
+
+# # Path used for searching by FIND_XXX(), with appropriate suffixes added
+# if(CMAKE_PREFIX_PATH)
+#     foreach(dir ${CMAKE_PREFIX_PATH})
+#         list(APPEND DIRS "${dir}/bin" "${dir}/lib")
+#     endforeach()
+# endif()
+
+# # Append Qt's lib folder which is two levels above Qt5Widgets_DIR
+# list(APPEND DIRS "${Qt5Widgets_DIR}/../..")
+
+# include(InstallRequiredSystemLibraries)
+
+# message(STATUS "APPS: ${APPS}")
+# message(STATUS "QT_PLUGINS: ${QT_PLUGINS}")
+# message(STATUS "DIRS: ${DIRS}")
+
+# set(CMAKE_INSTALL_PREFIX ${CMAKE_BINARY_DIR})
+# install(CODE "include(BundleUtilities)
+#      fixup_bundle(\"${APPS}\" \"${QT_PLUGINS}\" \"${DIRS}\")")
+
+# set(CPACK_GENERATOR "DragNDrop")
+# include(CPack)
